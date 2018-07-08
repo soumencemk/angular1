@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<script src="resource/angular.min.js"></script>
+<style>
+    input.ng-invalid {
+        background-color: lightblue;
+    }
+</style>
+
+<body>
+
+    <form ng-app="" name="myForm">
+        Email:
+        <input type="email" name="myAddress" ng-model="text">
+        <span ng-show="myForm.myAddress.$error.email" style="color: red">Not a valid e-mail address</span>
+
+
+        <p>Enter your e-mail address in the input field. AngularJS will display an errormessage if the address is not an e-mail.</p>
+        <h1>Status</h1>
+        <p>Valid: {{myForm.myAddress.$valid}} (if true, the value meets all criteria).</p>
+        <p>Dirty: {{myForm.myAddress.$dirty}} (if true, the value has been changed).</p>
+        <p>Touched: {{myForm.myAddress.$touched}} (if true, the field has been in focus).</p>
+        <br/> Enter your name:
+        <input name="myName" ng-model="myText" required>
+    </form>
+</body>
+
+</html>

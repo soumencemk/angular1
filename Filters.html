@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<script src="resource/angular.min.js"></script>
+
+<body data-ng-app="myApp">
+
+    <div ng-controller="personCtrl">
+        <p>The name is {{ lastName | uppercase }}</p>
+        <p>The First Name is {{ firstName | lowercase }}</p>
+    </div>
+    <script>
+        angular.module('myApp', []).controller('personCtrl', function ($scope) {
+            $scope.firstName = "John",
+            $scope.lastName = "Doe"
+        });        
+    </script>
+
+</body>
+
+</html>
